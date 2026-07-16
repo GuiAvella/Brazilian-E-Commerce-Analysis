@@ -112,9 +112,8 @@ def style(fig, title, height=440):
         plot_bgcolor='white', paper_bgcolor='white',
         font=dict(family='Arial', size=12, color=BLACK), 
         height=height,
-        #margin=dict(l=50, r=50, t=55, b=50),
         legend=dict(bgcolor='rgba(0,0,0,0)',font=dict(color="#000000")),
-        #template= "plotly_white"
+
     )
     fig.update_xaxes(showgrid=False, zeroline=False)
     fig.update_yaxes(showgrid=True, gridcolor="#000000", zeroline=False)
