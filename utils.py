@@ -103,7 +103,7 @@ def style(fig, title, height=440):
         font=dict(family='Arial', size=12, color=BLACK), 
         height=height,
         margin=dict(l=10, r=10, t=55, b=10),
-        legend=dict(bgcolor='rgba(0,0,0,0)',font=dict(color="#2E75B6"))
+        legend=dict(bgcolor='rgba(0,0,0,0)',font=dict(color="#000000"))
     )
     fig.update_xaxes(showgrid=False, zeroline=False)
     fig.update_yaxes(showgrid=True, gridcolor="#000000", zeroline=False)
