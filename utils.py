@@ -13,7 +13,7 @@ STATE_NAMES = {
 }
 
 # CVD-safe palette — reused by every page (blue/orange/grey, never red-green)
-BLUE, ORANGE, GREY, GREEN = "#2E75B6", "#E07B39", "#AAAAAA", "#3F9C6B"
+BLUE, ORANGE, GREY, GREEN, BLACK, WHITE = "#2E75B6", "#E07B39", "#AAAAAA", "#3F9C6B", "#000000", "#FFFFFF"
 DARKRED = "#8B0000"
 CVD_SEQ = ["#2E75B6", "#56B4E9", "#3F9C6B", "#E69F00", "#E07B39", "#CC79A7"]
 

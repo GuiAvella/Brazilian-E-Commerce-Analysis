@@ -39,8 +39,8 @@ fig = px.scatter(state_perf, x='avg_delivery_days', y='avg_review', size='n_orde
                   color='avg_delivery_days', color_continuous_scale=[GREY, ORANGE],
                   hover_name='customer_state', size_max=45,
                   labels={'avg_delivery_days': 'Average delivery time (days)', 'avg_review': 'Average review score (1-5)'})
-fig.update_traces(marker=dict(line=dict(width=1, color='white')))
-fig.add_hline(y=state_perf['avg_review'].mean(), line_dash='dot', line_color=GREY, opacity=0.6,
+fig.update_traces(marker=dict(line=dict(width=1, color='black')))
+fig.add_hline(y=state_perf['avg_review'].mean(), line_dash='dot', line_color=BLACK, opacity=0.6,
               annotation_text='national average', annotation_position='top left')
 fig = style(fig, 'Slower-delivery states also rate their orders lower', height=480)
 fig.update_coloraxes(showscale=False)
