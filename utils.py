@@ -105,7 +105,7 @@ def style(fig, title, height=440):
         legend=dict(bgcolor='rgba(0,0,0,0)',font=dict(color="#2E75B6"))
     )
     fig.update_xaxes(showgrid=False, zeroline=False)
-    fig.update_yaxes(showgrid=True, gridcolor='#EEEEEE', zeroline=False)
+    fig.update_yaxes(showgrid=True, gridcolor="#000000", zeroline=False)
     return fig
 
 
