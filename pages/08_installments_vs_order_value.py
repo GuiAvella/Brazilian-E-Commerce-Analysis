@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.express as px
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from utils import load_data, sidebar_filters, style, page_header, CVD_SEQ
+from utils import *
 os.chdir(os.path.dirname(os.path.dirname(__file__)))
 
 items, delivered, customers = load_data()
@@ -35,7 +35,7 @@ fig = px.scatter(inst, x='max_installments', y='avg_value', color='main_payment_
                   labels={'max_installments': 'Number of installments', 'avg_value': 'Average order value (R$)',
                           'main_payment_type': 'Payment type'})
 fig = style(fig, 'More installments track with bigger baskets — most visibly on credit cards', height=480)
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with st.expander('📊 Show installment data'):
     st.dataframe(inst.sort_values(['main_payment_type', 'max_installments']), use_container_width=True)

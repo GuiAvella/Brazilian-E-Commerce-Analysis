@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from utils import load_data, sidebar_filters, style, page_header, CVD_SEQ
+from utils import *
 os.chdir(os.path.dirname(os.path.dirname(__file__)))
 
 items, delivered, customers = load_data()
@@ -43,9 +43,9 @@ fig = px.bar(pivot, x='product_category_name_english', y='review_score', color='
              color_discrete_sequence=CVD_SEQ,
              labels={'product_category_name_english': '', 'review_score': 'Average review score', 'price_tier': 'Price tier'})
 fig = style(fig, "Higher price tiers don't buy higher satisfaction", height=480)
-fig.update_yaxes(range=[max(0, pivot['review_score'].min()-0.3), 5])
+fig.update_yaxes(range=[max(0, pivot['review_score'].min()-0.3), min(5, pivot['review_score'].max())])
 fig.update_xaxes(tickangle=-20)
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with st.expander('📊 Show pivot data'):
     st.dataframe(pivot, use_container_width=True)

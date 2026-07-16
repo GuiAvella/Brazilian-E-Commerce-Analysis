@@ -34,14 +34,13 @@ st.divider()
 fig = go.Figure()
 fig.add_scatter(x=seller_rev['seller_rank_pct'], y=seller_rev['cum_share'] * 100, mode='lines',
                  line=dict(color=BLUE, width=3), fill='tozeroy', fillcolor='rgba(46,117,182,0.12)')
-fig.add_scatter(x=[0, 100], y=[0, 100], mode='lines', line=dict(color=GREY, width=1.5, dash='dot'))
 fig.add_annotation(x=20, y=top20_share * 100, text=f"top 20% of sellers = {top20_share:.0%} of revenue",
                     showarrow=True, arrowhead=2, ax=60, ay=-40, font=dict(color=ORANGE))
 fig = style(fig, 'A small slice of sellers accounts for most marketplace revenue', height=480)
 fig.update_xaxes(title='Sellers ranked by revenue (cumulative %)')
 fig.update_yaxes(title='Cumulative share of revenue (%)')
 fig.update_layout(showlegend=False)
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with st.expander('📊 Show top sellers'):
     st.dataframe(seller_rev.head(20), use_container_width=True)

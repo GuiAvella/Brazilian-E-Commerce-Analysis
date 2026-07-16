@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from utils import load_data, sidebar_filters, style, page_header, GREY, BLUE
+from utils import *
 os.chdir(os.path.dirname(os.path.dirname(__file__)))
 
 items, delivered, customers = load_data()
@@ -34,13 +34,13 @@ k2.metric('Years compared', f"{len(years_present)}")
 st.divider()
 
 # BBD CATEGORICAL: year is a small ordered set of lines → grey (older) vs blue (newest)
-palette = [GREY, BLUE, '#3F9C6B', '#E69F00'][:max(len(years_present), 1)]
+palette = CVD_SEQ[:max(len(years_present), 1)]
 fig = px.line(weekly, x='purchase_dow', y='order_id', color='purchase_year',
               color_discrete_sequence=palette, markers=True,
               labels={'purchase_dow': 'Day of week', 'order_id': 'Number of orders', 'purchase_year': 'Year'})
 fig.update_traces(line=dict(width=2.5), marker=dict(size=8))
 fig = style(fig, 'Weekday order volume grows faster than weekends year over year', height=460)
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with st.expander('📊 Show weekly data'):
     st.dataframe(weekly, use_container_width=True)

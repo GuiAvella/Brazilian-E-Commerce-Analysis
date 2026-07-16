@@ -36,7 +36,7 @@ fig = px.scatter(d5, x='product_volume_cm3', y='freight_value', color='product_c
                   labels={'product_volume_cm3': 'Product volume (cm³)', 'freight_value': 'Freight cost (R$)',
                           'product_category_name_english': 'Category'})
 fig = style(fig, 'Freight scales with product volume — steepest for furniture & bed/bath/table', height=480)
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with st.expander('📊 Show sample data'):
     st.dataframe(d5[['product_category_name_english', 'product_volume_cm3', 'freight_value']].head(200),

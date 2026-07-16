@@ -13,10 +13,20 @@ STATE_NAMES = {
 }
 
 # CVD-safe palette — reused by every page (blue/orange/grey, never red-green)
-BLUE, ORANGE, GREY, GREEN, BLACK, WHITE = "#2E75B6", "#E07B39", "#AAAAAA", "#3F9C6B", "#000000", "#FFFFFF"
-DARKRED = "#8B0000"
-CVD_SEQ = ["#2E75B6", "#56B4E9", "#3F9C6B", "#E69F00", "#E07B39", "#CC79A7"]
-
+BLUE, ORANGE, GREY, GREEN, BLACK, WHITE = "#005B96", "#E07B39", "#AAAAAA", "#3F9C6B", "#000000", "#FFFFFF"
+DARKRED, RED = "#8B0000", "#D50032"
+CVD_SEQ = [
+    "#F69C00",
+    "#009B77",
+    "#D50032",
+    "#005B96",
+    "#A38900",
+    "#C1FE66",
+    "#4ECDC4",
+    "#FF6F40",
+    "#FFB703",
+    "#1C1C1C"
+    ]
 
 # ─────────────────────────────────────────────────────────────────────────────
 # cached loader — the expensive merge already happened in notebook/prepare_data.py;
@@ -95,17 +105,19 @@ def sidebar_filters(items, delivered, customers):
     return f_items, f_delivered, f_customers
 
 
-def style(fig, title, height=440):
+def style(fig, title, height=440):  
     """Shared chart styling: white background, Arial, decluttered grid."""
     fig.update_layout(
-        title=dict(text=title, font=dict(size=15, family='Arial', color='#222'), x=0.01),
+        title=dict(text=title, font=dict(size=15, family='Arial', color=BLACK), x=0.01),
         plot_bgcolor='white', paper_bgcolor='white',
-        font=dict(family='Arial', size=12), height=height,
-        margin=dict(l=10, r=10, t=55, b=10),
-        legend=dict(bgcolor='rgba(0,0,0,0)'),
+        font=dict(family='Arial', size=12, color=BLACK), 
+        height=height,
+        #margin=dict(l=50, r=50, t=55, b=50),
+        legend=dict(bgcolor='rgba(0,0,0,0)',font=dict(color="#000000")),
+        #template= "plotly_white"
     )
     fig.update_xaxes(showgrid=False, zeroline=False)
-    fig.update_yaxes(showgrid=True, gridcolor='#EEEEEE', zeroline=False)
+    fig.update_yaxes(showgrid=True, gridcolor="#000000", zeroline=False)
     return fig
 
 

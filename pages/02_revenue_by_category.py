@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.express as px
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from utils import load_data, sidebar_filters, style, page_header, CVD_SEQ
+from utils import *
 os.chdir(os.path.dirname(os.path.dirname(__file__)))
 
 items, delivered, customers = load_data()
@@ -41,7 +41,7 @@ fig = px.line(monthly_cat, x='purchase_month', y='item_total', color='product_ca
 fig.update_traces(line=dict(width=2.5))
 fig = style(fig, 'Revenue trend for the top categories', height=480)
 fig.update_xaxes(tickangle=-45)
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with st.expander('📊 Show monthly totals'):
     st.dataframe(monthly_cat.sort_values(['product_category_name_english', 'purchase_month']), use_container_width=True)

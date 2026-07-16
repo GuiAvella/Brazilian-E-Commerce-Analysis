@@ -37,7 +37,7 @@ fig.add_hline(y=cross['pct_cross_state'].mean(), line_dash='dot', line_color='#6
               annotation_text='national average', annotation_position='top right')
 fig = style(fig, 'Outside the São Paulo–Rio–Minas core, most orders ship in from elsewhere', height=480)
 fig.update_coloraxes(showscale=False)
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with st.expander('📊 Show state data'):
     st.dataframe(cross, use_container_width=True)

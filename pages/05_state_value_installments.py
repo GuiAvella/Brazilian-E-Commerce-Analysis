@@ -40,9 +40,9 @@ fig.add_scatter(x=state_value['customer_state'], y=state_value['avg_installments
 fig.update_layout(
     yaxis=dict(title='Avg order value (R$)'),
     yaxis2=dict(title='Avg installments chosen', overlaying='y', side='right', showgrid=False),
-    legend=dict(orientation='h', y=1.12, x=0.02))
+    legend=dict(orientation='h', y=20, x=0.02))
 fig = style(fig, 'Northern states spend more per order — and finance it in more installments', height=480)
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with st.expander('📊 Show state data'):
     st.dataframe(state_value, use_container_width=True)

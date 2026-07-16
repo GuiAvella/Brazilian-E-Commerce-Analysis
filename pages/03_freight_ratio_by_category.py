@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.express as px
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from utils import load_data, sidebar_filters, style, page_header, GREY, BLUE
+from utils import *
 os.chdir(os.path.dirname(os.path.dirname(__file__)))
 
 items, delivered, customers = load_data()
@@ -37,7 +37,8 @@ fig = px.bar(cat_freight.sort_values('median_ratio'), x='median_ratio', y='produ
 fig = style(fig, 'Bulky, low-value categories carry the heaviest relative freight cost', height=500)
 fig.update_coloraxes(showscale=False)
 fig.update_xaxes(tickformat='.0%')
-st.plotly_chart(fig, use_container_width=True)
+fig.update_layout(margin=dict(l=200))
+st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with st.expander('📊 Show category data'):
     st.dataframe(cat_freight, use_container_width=True)

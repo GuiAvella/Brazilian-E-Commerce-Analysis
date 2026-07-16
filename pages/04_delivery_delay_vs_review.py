@@ -34,7 +34,7 @@ k3.metric('% of orders late', f"{(d['delivery_delay_days'] > 0).mean():.1%}")
 st.divider()
 
 # BBD CVD: grey (early) → green (on time) → orange → dark red (worst) — no red/green pairing
-colors = [GREY, GREY, GREEN, ORANGE, DARKRED]
+colors = [GREEN, GREEN, GREEN, ORANGE, DARKRED]
 fig = px.bar(bucket_rev, x='delay_bucket', y='review_score',
              labels={'delay_bucket': 'Delivery timing vs. estimate', 'review_score': 'Average review score'})
 fig.update_traces(marker_color=colors[:len(bucket_rev)],
@@ -42,7 +42,7 @@ fig.update_traces(marker_color=colors[:len(bucket_rev)],
 fig.add_hline(y=d['review_score'].mean(), line_dash='dot', line_color='#999')
 fig = style(fig, 'A late delivery costs almost a full star', height=460)
 fig.update_yaxes(range=[0, 5.3])
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with st.expander('📊 Show bucket data'):
     st.dataframe(bucket_rev, use_container_width=True)

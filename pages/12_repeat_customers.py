@@ -47,7 +47,7 @@ fig.add_trace(go.Bar(x=seg['segment'], y=seg['avg_spent'], marker_color=[GREY, B
                       text=seg['avg_spent'].round(0), textposition='outside'), row=1, col=2)
 fig = style(fig, 'Repeat customers are rare but spend meaningfully more per head', height=440)
 fig.update_layout(showlegend=False)
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with st.expander('📊 Show segment data'):
     st.dataframe(seg, use_container_width=True)
