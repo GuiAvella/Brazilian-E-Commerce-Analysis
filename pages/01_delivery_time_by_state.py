@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.express as px
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from utils import load_data, sidebar_filters, style, page_header, GREY, ORANGE
+from utils import *
 os.chdir(os.path.dirname(os.path.dirname(__file__)))
 
 items, delivered, customers = load_data()
