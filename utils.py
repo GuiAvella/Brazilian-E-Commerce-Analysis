@@ -109,7 +109,7 @@ def style(fig, title, height=440):
         showgrid=False, 
         zeroline=False,
         title_font=dict(color=BLACK),   # axis title color
-        tickfont=dict(color=BLACK),     # tick label color (4.2, 4.1, etc.)
+        tickfont=dict(tickfont_color=BLACK),     # tick label color (4.2, 4.1, etc.)
     )
     fig.update_yaxes(
         showgrid=True, 
