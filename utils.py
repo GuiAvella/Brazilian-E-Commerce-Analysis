@@ -102,10 +102,10 @@ def style(fig, title, height=440):
         plot_bgcolor='white', paper_bgcolor='white',
         font=dict(family='Arial', size=12), height=height,
         margin=dict(l=10, r=10, t=55, b=10),
-        legend=dict(bgcolor='rgba(0,0,0,0)'),
+        legend=dict(bgcolor=BLACK),
     )
     fig.update_xaxes(showgrid=False, zeroline=False)
-    fig.update_yaxes(showgrid=True, gridcolor='#EEEEEE', zeroline=False)
+    fig.update_yaxes(showgrid=True, gridcolor="#000000", zeroline=False)
     return fig
 
 
