@@ -99,9 +99,9 @@ def style(fig, title, height=440):
     """Shared chart styling: white background, Arial, decluttered grid."""
     fig.update_layout(
         title=dict(text=title, font=dict(size=15, family='Arial', color=BLACK), x=0.01),
-        tickfont=dict(color="#2E75B6"),
         plot_bgcolor='white', paper_bgcolor='white',
-        font=dict(family='Arial', size=12), height=height,
+        font=dict(family='Arial', size=12, color=BLACK), 
+        height=height,
         margin=dict(l=10, r=10, t=55, b=10),
         legend=dict(bgcolor='rgba(0,0,0,0)',font=dict(color="#2E75B6"))
     )
