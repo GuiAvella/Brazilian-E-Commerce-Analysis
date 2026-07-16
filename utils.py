@@ -103,21 +103,11 @@ def style(fig, title, height=440):
         font=dict(family='Arial', size=12, color=BLACK), 
         height=height,
         margin=dict(l=10, r=10, t=55, b=10),
-        legend=dict(bgcolor='rgba(0,0,0,0)',font=dict(color="#000000"))
+        legend=dict(bgcolor='rgba(0,0,0,0)',font=dict(color="#000000")),
+        template= "plotly_white"
     )
-    fig.update_xaxes(
-        showgrid=False, 
-        zeroline=False,
-        title_font=dict(color=BLACK),   # axis title color
-        tickfont=dict(color=BLACK),     # tick label color (4.2, 4.1, etc.)
-    )
-    fig.update_yaxes(
-        showgrid=True, 
-        gridcolor="#000000", 
-        zeroline=False,
-        title_font=dict(color=BLACK),   # axis title color
-        tickfont=dict(color=BLACK),     # tick label color (4.2, 4.1, etc.)
-    )
+    fig.update_xaxes(showgrid=False, zeroline=False)
+    fig.update_yaxes(showgrid=True, gridcolor="#000000", zeroline=False)
     return fig
 
 
