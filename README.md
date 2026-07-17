@@ -92,7 +92,6 @@ streamlit run app.py
 2. Go to [share.streamlit.io](https://share.streamlit.io/), sign in with GitHub, and click **New app**.
 3. Point it at this repo, branch `main`, main file path `app.py` (no subfolder).
 4. Deploy — Streamlit Community Cloud installs `requirements.txt` automatically.
-5. Add the resulting live URL to this README and to the presentation.
 
 ## Key takeaways
 

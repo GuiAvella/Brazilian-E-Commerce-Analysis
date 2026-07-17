@@ -9,7 +9,11 @@ import urllib.request
 import pandas as pd
 import numpy as np
 
-RAW = "raw_data/"
+os.chdir(os.path.dirname(__file__))
+print(os.path.dirname(__file__))
+
+
+RAW = "./raw_data/"
 OUT = "../data/"
 
 GITHUB_BASE = "https://raw.githubusercontent.com/olist/work-at-olist-data/master/datasets/"
