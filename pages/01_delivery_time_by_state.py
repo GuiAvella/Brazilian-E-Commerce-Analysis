@@ -2,9 +2,9 @@
 import streamlit as st
 import plotly.express as px
 import sys, os
-sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+sys.path.insert(0, os.path.dirname((os.path.abspath(''))))
 from utils import *
-os.chdir(os.path.dirname(os.path.dirname(__file__)))
+os.chdir(os.path.dirname((os.path.abspath(''))))
 
 items, delivered, customers = load_data()
 f_items, f_delivered, f_customers = sidebar_filters(items, delivered, customers)
